@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .main{
+            background-color: black;
+            color: white;
+            height: 70vh;
+        }
+        .navbar ul li{
+            display: inline;
+        }
+        .navbar img{
+            width: 40px;
+        }
+        .navbar ul a{
+            text-decoration: none;
+            color: white;
+            margin-left: 50px;
+        }
+        .navbar ul button{
+            float: right;
+        }
+        .box{
+            display: flex;
+            flex-direction: row;
+            width: 80%;
+            margin: auto;
+            margin-top: 100px;
+        }
+
+        .box .imgdiv{
+            width: 50%;
+           
+        }
+
+        .box .imgdiv img{
+            width: 50%;
+        }
+
+        .box .content{
+            width: 50%;
+        }
+
+        .content .name{
+            font-size: 30px;
+            color: rgb(29, 221, 189);
+        }
+
+        .content h1{
+            color: white;
+            font-size: 50px;
+        }
+        .content .dev{
+            color: rgb(29, 221, 189) ;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <div class="main">
+        <div class="navbar">
+            <ul>
+                <li><img src="./media/ZEE5_logo.svg" alt="" ></li>
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Services</a></li>
+                <li><a href="">Blog</a></li>
+                <li><a href="">More</a></li>
+                <li><button>Contact</button></li>
+            </ul>
+        </div>
+        <div class="box">
+            <div class="imgdiv">
+                <img src="./media/Animation-PNG-Photos.png" alt="" width="100px">
+            </div>
+            <div class="content">
+                <span class="name">Devanshu</span>
+                <h1>I'm a Web <br> <span class="dev">Developer</span></h1>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias possimus consectetur quae, facilis dolore officiis quas optio aut debitis distinctio.</p>
+                <button>Download CV</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <style>
+        div ul li{
+            list-style-type: none;
+            display: inline;
+        }
+        div{
+            background-color: black;
+           padding: 10px;
+        }
+        div ul li a{
+            text-decoration: none;
+            color: white;
+            margin-left: 40px;
+        }
+
+        div ul li a:hover{
+            border: 1px solid white;
+            border-radius: 5px;
+            padding: 10px;
+            background-color: white;
+            color: black;
+        }
+        div ul li img{
+            width: 70px;
+        }
+
+        div form{
+            float: right;
+            /* border: 1px solid white;
+            width: 400px; */
+        }
+
+
+
+        /* div form span{
+            color: white;
+            background-color: rgb(243, 168, 71);
+            padding: px;
+        }
+
+        #search{
+            border: none;
+            outline: none;
+            width: 360px;
+            padding: 11px;
+        } */
+
+
+        #btn{
+            background-color: white;
+            color: green;
+            border: 1px solid green;
+            padding: 4px;
+        }
+
+        #btn:hover{
+            background-color: green;
+            color: white;
+
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <span class="material-symbols-outlined">
+        sort_by_alpha
+        </span>
+
+    <span class="material-symbols-outlined">
+        cycle
+        </span>
+    
+
+    <div class="box">
+        <ul>
+            <li><img src="./media/Animation-PNG-HD.png" alt=""></li>
+            <li><a href="">Home</a></li>
+            <li><a href="">About us</a></li>
+            <li><a href="">Contact us</a></li>
+            <li><a href="">Query</a></li>
+            <li><a href="">Services</a></li>
+            <li>
+                <form action="">
+                    <input type="search" name="" id="search" placeholder="Search Here...">
+                    <!-- <span class="material-symbols-outlined">
+                        search
+                        </span> -->
+                        <input type="submit" value="Search" id="btn">
+                </form>
+            </li>
+        </ul>
+    </div>
+
+
+</body>
+</html>

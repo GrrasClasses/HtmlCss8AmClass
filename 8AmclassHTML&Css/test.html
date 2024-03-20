@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    #puzzle-container {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-gap: 5px;
+}
+
+.tile {
+  width: 100px;
+  height: 100px;
+  background-color: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.empty {
+  background-color: #fff;
+}
+
+  </style>
+  <title>Puzzle Game</title>
+</head>
+<body>
+  <div id="puzzle-container"></div>
+  <script src="script.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+  const puzzleContainer = document.getElementById('puzzle-container');
+
+  // Initialize puzzle
+  const puzzleSize = 3;
+  const totalTiles = puzzleSize * puzzleSize;
+
+  for (let i = 1; i < totalTiles; i++) {
+    const tile = document.createElement('div');
+    tile.classList.add('tile');
+    tile.textContent = i;
+    tile.addEventListener('click', () => handleClick(i));
+    puzzleContainer.appendChild(tile);
+  }
+
+  const emptyTile = document.createElement('div');
+  emptyTile.classList.add('tile', 'empty');
+  puzzleContainer.appendChild(emptyTile);
+
+  // Handle tile click
+  function handleClick(tileValue) {
+    const emptyTileIndex = Array.from(puzzleContainer.children).indexOf(emptyTile);
+    const tileIndex = Array.from(puzzleContainer.children).indexOf(event.target);
+
+    if (isAdjacent(emptyTileIndex, tileIndex)) {
+      swapTiles(emptyTileIndex, tileIndex);
+      if (isPuzzleSolved()) {
+        alert('Congratulations! Puzzle Solved!');
+        resetPuzzle();
+      }
+    }
+  }
+
+  // Check if two tiles are adjacent
+  function isAdjacent(index1, index2) {
+    const row1 = Math.floor(index1 / puzzleSize);
+    const col1 = index1 % puzzleSize;
+    const row2 = Math.floor(index2 / puzzleSize);
+    const col2 = index2 % puzzleSize;
+
+    return Math.abs(row1 - row2) + Math.abs(col1 - col2) === 1;
+  }
+
+  // Swap two tiles
+  function swapTiles(index1, index2) {
+    [puzzleContainer.children[index1], puzzleContainer.children[index2]] = [puzzleContainer.children[index2], puzzleContainer.children[index1]];
+  }
+
+  // Check if the puzzle is solved
+  function isPuzzleSolved() {
+    for (let i = 0; i < totalTiles - 1; i++) {
+      if (parseInt(puzzleContainer.children[i].textContent) !== i + 1) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  // Reset the puzzle
+  function resetPuzzle() {
+    const tiles = Array.from(puzzleContainer.children);
+    tiles.forEach(tile => puzzleContainer.removeChild(tile));
+    for (let i = 1; i < totalTiles; i++) {
+      const tile = document.createElement('div');
+      tile.classList.add('tile');
+      tile.textContent = i;
+      tile.addEventListener('click', () => handleClick(i));
+      puzzleContainer.appendChild(tile);
+    }
+    puzzleContainer.appendChild(emptyTile);
+  }
+});
+
+  </script>
+</body>
+</html>

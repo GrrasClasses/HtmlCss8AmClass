@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+            #product{
+                background-color: black;
+                width: 90%;
+                height: 45vh;
+                margin: auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              
+            }
+
+            #product > div{
+                background-color: white;
+                width: 300px;
+                height: 40vh;
+                box-shadow: 2px 2px 10px beige;
+                margin: 10px;
+            }
+
+            .box1{
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+
+            }
+
+            .box1 > div{
+                background-color: aquamarine;
+                width: 120px;
+                height: 15vh;
+                margin: 10px;
+            
+            }
+
+            @media screen and (max-width:1000px) {
+                #product{
+
+                    flex-direction: column;
+                    height: 98vh;
+                    width: 50%;
+                }
+
+                #product > div{
+                    height:80vh ;
+                }
+
+                .conatiner1{
+                    order: 2;
+                }
+                
+            }
+
+    </style>
+
+</head>
+<body>
+    
+
+    <section id="product">
+        <div class="box1">
+            <div class="conatiner1" style="order: 4;">Container1</div>
+            <div class="conatiner2" style="order: 3 ;">Container2</div>
+            <div class="conatiner3" style="order: 2;">Container3</div>
+            <div class="conatiner4" style="order: 1;">Container4</div>
+        </div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+        <div class="box4"></div>
+    </section>
+
+</body>
+</html>
